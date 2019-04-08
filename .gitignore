@@ -63,3 +63,6 @@ typings/
 # build drops
 dist
 build
+
+# macOS custom attributes file
+.DS_Store

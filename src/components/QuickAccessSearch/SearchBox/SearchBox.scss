@@ -1,0 +1,70 @@
+.searchbox-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 25em;
+  height: 1.5em;
+
+  .searchbox {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    background-color: #f4f5f8;
+    border-radius: 1em;
+    padding: 1em;
+    color: #929292;
+  
+    .searchbox-icon {
+      margin-right: 0.5em;
+      font-size: 1.2em;
+    }
+  
+    input {
+      border: none;
+      outline: none;
+      background-color: inherit;
+      line-height: 1em;
+      align-self: center;
+      font-size: 1.3em;
+      color: inherit;
+      caret-color: #1a74e8;
+      cursor: default;
+    }
+  
+    ::placeholder {
+      color: #929292;
+    }
+  
+    i {
+      animation-name: blink;
+      animation-duration: 1000ms;
+      animation-iteration-count: infinite;
+    }
+  
+    input:focus + i {
+      display: none;
+    }
+  }
+
+  .cancel-button {
+    border: none;
+    outline: none;
+    color: #929292;
+    font-size: 1.1em;
+    padding: none;
+    cursor: pointer;
+    margin: 0.2em;
+    animation-name: jelly;
+    animation-duration: 1000ms;
+
+    &:hover {
+      color: #1a74e8;
+    }
+  }
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
