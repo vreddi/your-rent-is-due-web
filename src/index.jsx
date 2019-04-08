@@ -43,3 +43,5 @@ render(App);
 if (module.hot) {
   module.hot.accept('./components/App', () => { render(App); });
 }
+
+export default client;

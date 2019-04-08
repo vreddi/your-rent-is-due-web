@@ -50,6 +50,9 @@ module.exports = {
                 quality: 60,
                 lossless: true,
               },
+              svgo: {
+                enabled: false,
+              },
             },
           },
         ],
@@ -59,6 +62,7 @@ module.exports = {
 
   resolve: {
     alias: {
+      src: path.resolve(__dirname, 'src'),
       components: path.resolve(__dirname, 'src/components'),
       state: path.resolve(__dirname, 'src/state'),
       mutations: path.resolve(__dirname, 'src/mutations'),
