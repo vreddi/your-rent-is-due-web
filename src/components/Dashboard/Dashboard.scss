@@ -1,0 +1,27 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+
+  .dashboard-avatar {
+    cursor: pointer;
+    animation-name: splat-to-left;
+    animation-duration: 1000ms;
+  }
+
+  .dashboard-logout {
+    animation-name: splat-to-left;
+    animation-duration: 1000ms;
+  }
+
+  .dashboard-head {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    padding: 5em;
+  }
+
+  .dashboard-body {
+    background-color: #e3e3e3;
+    height: 100%;
+  }
+}

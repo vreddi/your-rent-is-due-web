@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
-import client from 'src/index';
+import client from 'root/index';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import SearchBox from 'components/QuickAccessSearch/SearchBox/SearchBox';
@@ -15,7 +14,6 @@ class SearchBoxCover extends Component {
   constructor(props) {
     super(props);
 
-    console.log(this.props);
     this.state = {
       searchValue: '',
       showCover: false,
@@ -56,7 +54,8 @@ class SearchBoxCover extends Component {
   }
 
   onSearchBoxFocusChange = (isFocussed) => {
-    this.setState({ showCover: isFocussed || this.state.searchValue.length })
+    const { searchValue } = this.state;
+    this.setState({ showCover: isFocussed || searchValue.length });
   }
 
   getSearchResults = () => {
@@ -106,9 +105,10 @@ class SearchBoxCover extends Component {
   }
 
   render = () => {
+    const { showCover } = this.state;
     const searchBoxCoverClassNames = classNames({
       'searchbox-cover-preserved': true,
-      'searchbox-cover': this.state.showCover,
+      'searchbox-cover': showCover,
     });
 
     return (

@@ -1,18 +1,16 @@
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   overflow: hidden;
-  background: #eee;
-  padding: 10px 30px;
+  background: rgb(37, 37, 37);
+  padding: 1.5em 5em;
+  box-shadow: 0px 0px 8px 2px #000000;
+  z-index: 2;
+  position: relative;
 
-  .header-user-circle {
-    display:inline-block;
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+  .version-tag {
+    color: #888787;
+    margin-left: -4em;
+    margin-top: -1em;
   }
 }
