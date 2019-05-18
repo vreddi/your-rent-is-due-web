@@ -1,0 +1,71 @@
+.quickaccess-add-subscription {
+  width: 100%;
+  .quickaccess-subscription-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    
+    .quickaccess-header {
+      display: flex;
+      height: 3em;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5em;
+
+      .quickaccess-header-left {
+        display: flex;
+        align-items: center;
+        height: inherit;
+        width: inherit;
+
+        .quickaccess-header-image {
+          height: 90%;
+          width: auto;
+        }
+        .quickaccess-header-title {
+          margin-left: 0.5em;
+          font-size: 1.1em;
+          font-weight: 700;
+          color: #353434;
+        }
+      }
+      .quickaccess-header-right {
+        height: inherit;
+        width: fit-content;
+        min-width: 8em;
+      }
+    }
+
+    .quickaccess-frequency-content {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding-bottom: 1em;
+
+      .quickaccess-frequency {
+        width: 60%;
+        animation-name: jelly;
+        animation-duration: 1000ms;
+      }
+
+      .quickaccess-frequency-datepicker-container {
+        width: 35%;
+        margin: 0em 2em;
+      }
+
+      .quickaccess-frequency-datepicker {
+        animation-name: jelly;
+        animation-duration: 1000ms;
+      }
+    }
+
+    .quickaccess-amount {
+      width: 60%;
+      animation-name: jelly;
+      animation-duration: 1000ms;
+      margin-bottom: 1.5em;
+    }
+  }
+}

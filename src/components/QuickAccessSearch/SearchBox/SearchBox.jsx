@@ -67,8 +67,12 @@ class SearchBox extends Component {
   }
 
   onCancelClick = () => {
-    const { onCancelClickCallback } = this.props;
-    this.setState({ value: '' });
+    const { onCancelClickCallback, clearOnCancel } = this.props;
+
+    if (clearOnCancel) {
+      this.setState({ value: '' });
+    }
+
     onCancelClickCallback();
   }
 
@@ -121,11 +125,13 @@ SearchBox.propTypes = {
   onValueChangeCallback: PropTypes.func,
   onFocusChangeCallback: PropTypes.func,
   onCancelClickCallback: PropTypes.func,
+  clearOnCancel: PropTypes.bool,
 };
 
 SearchBox.defaultProps = {
   placeholder: '',
   inputType: 'text',
+  clearOnCancel: false,
   onValueChangeCallback: () => null,
   onFocusChangeCallback: () => null,
   onCancelClickCallback: () => null,
