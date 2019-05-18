@@ -6,7 +6,7 @@ const Header = ({ children }) => (
   <div className="header">
     <div className="version-tag">
       pre-alpha
-      <span role="img" aria-label="cheers"> 🍻</span>
+      <span role="img" aria-label="cheers"> ☕</span>
     </div>
     {children}
   </div>
