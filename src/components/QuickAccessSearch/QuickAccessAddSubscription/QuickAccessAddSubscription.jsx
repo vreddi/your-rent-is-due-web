@@ -63,7 +63,12 @@ class QuickAccessAddSubscription extends Component {
   }
 
   onAddBtnClick = () => {
-    const { createTrackingItem, title, addBtnClick } = this.props;
+    const {
+      createTrackingItem,
+      id,
+      title,
+      addBtnClick,
+    } = this.props;
     const {
       amount,
       autoPay,
@@ -75,6 +80,7 @@ class QuickAccessAddSubscription extends Component {
       autoPaySet: autoPay,
       type: TrackingItemUtils.trackingItemType.SUBSCRIPTION,
       frequency: billFrequencyValue,
+      subscriptionTemplateId: id,
     };
 
     createTrackingItem({
@@ -211,6 +217,7 @@ class QuickAccessAddSubscription extends Component {
 }
 
 QuickAccessAddSubscription.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
   image: PropTypes.string,
   createTrackingItem: PropTypes.func,
@@ -218,6 +225,7 @@ QuickAccessAddSubscription.propTypes = {
 };
 
 QuickAccessAddSubscription.defaultProps = {
+  id: null,
   title: '',
   image: '',
   createTrackingItem: () => null,
