@@ -12,6 +12,7 @@ import currentUserQuery from 'queries/user/getCurrentUser';
 import Routes from 'utils/routes';
 import logoutMutation from 'mutations/auth/logout';
 import './Dashboard.scss';
+import TrackingItemContainer from '../TrackingItem/TrackingItemContainer/TrackingItemContainer';
 
 // TODO: Move all the place components in their own area
 class Dashboard extends Component {
@@ -108,6 +109,7 @@ class Dashboard extends Component {
         <SearchBoxCover noResultsMessage="Quickly search services and subscriptions, add to your list or find existing tracking items."/>
       </div>
       <div className="dashboard-body">
+        <TrackingItemContainer />
       </div>
     </div>
   );

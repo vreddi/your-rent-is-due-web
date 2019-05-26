@@ -1,0 +1,57 @@
+.trackingitemcard {
+  transition: 0.3s;
+  min-width: 7em;
+  margin: "auto";
+  border-radius: 33em;
+  box-shadow: 0 8px 40px -12px rgba(0,0,0,0.3);
+  padding: 1em;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 16px 70px -12.125px rgba(0,0,0,0.3);
+  }
+
+  .trackingitemcard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .trackingitemcard-image {
+    width: 60;
+    height: 60;
+    background-color: #fff;
+    transform: translateY(50%);
+  }
+
+  .trackingItemCard-content {
+    padding: 1.5em;
+  }
+  .trackingItemCard-section1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .trackingItemCard-cost {
+      display: flex;
+      width: fit-content;
+      align-items: flex-end;
+
+      .trackingItemCard-frequency {
+        margin-bottom: 0.35em;
+      }
+    }
+
+    .trackingItemCard-autopay {
+      font-size: 0.9em;
+      .trackingItemCard-autopay-activated {
+        font-size: 1.3em;
+        color: #00c853;
+      }
+
+      .trackingItemCard-autopay-deactivated {
+        font-size: 1.3em;
+        color: #f4511e;
+      }
+    }
+  }
+}

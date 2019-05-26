@@ -1,0 +1,6 @@
+.trackingitemcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  grid-gap: 1rem;
+  padding: 2em;
+}

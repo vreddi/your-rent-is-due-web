@@ -6,6 +6,11 @@ export default gql`
       id
       userId
       title
+      amount
+      autoPaySet
+      frequency
+      subscriptionTemplateId
+      recurringDate
     }
   }
 `;

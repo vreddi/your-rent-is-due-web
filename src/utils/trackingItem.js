@@ -1,3 +1,5 @@
+import * as DefaultTrackingItemImage from 'assets/images/index.square-grid-loader.svg';
+
 export default class TrackingItemUtils {
   static trackingItemType = {
     BILL: 'BILL',
@@ -36,4 +38,6 @@ export default class TrackingItemUtils {
       value: TrackingItemUtils.trackingItemFrequency.ANNUALLY,
     },
   ];
+
+  static getLoadingImage = () => DefaultTrackingItemImage;
 }
