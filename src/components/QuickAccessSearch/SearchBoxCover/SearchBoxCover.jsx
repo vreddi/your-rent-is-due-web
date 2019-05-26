@@ -65,13 +65,15 @@ class SearchBoxCover extends Component {
     }
   }
 
-  onQuickAccessRowClick = ({ currentTarget }) => {
-    const rowName = $(currentTarget).text();
-    const rowImage = $(currentTarget).find('img').attr('src');
+  onQuickAccessRowClick = (event) => {
+    const rowId = $(event.currentTarget).attr('data-key');
+    const rowName = $(event.currentTarget).text();
+    const rowImage = $(event.currentTarget).find('img').attr('src');
 
     this.setState({
       showQuickAccessRowAddForm: true,
       selectedRowContent: {
+        id: rowId,
         title: rowName,
         image: rowImage,
       },
@@ -85,10 +87,11 @@ class SearchBoxCover extends Component {
 
   getQuickAccessRowAddForm = () => {
     const { selectedRowContent } = this.state;
-    const { title, image } = selectedRowContent;
+    const { id, title, image } = selectedRowContent;
 
     return (
       <QuickAccessAddSubscription
+        id={id}
         title={title}
         image={image}
         addBtnClick={() => this.setState({ showQuickAccessRowAddForm: false })}
@@ -126,6 +129,7 @@ class SearchBoxCover extends Component {
           subscription => (
             <QuickAccessRow
               key={subscription.id}
+              id={subscription.id}
               image={`data:${subscription.image.contentType};base64,${subscription.image.data}`}
               title={subscription.name}
               onRowClick={this.onQuickAccessRowClick}

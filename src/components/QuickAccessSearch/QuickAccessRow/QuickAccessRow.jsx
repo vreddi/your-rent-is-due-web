@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './QuickAccessRow.scss';
 
-const QuickAccessRow = ({ title, image, onRowClick }) => (
+const QuickAccessRow = ({
+  id,
+  title,
+  image,
+  onRowClick,
+}) => (
   <div
+    data-key={id}
     role="button"
     tabIndex={0}
     onKeyDown={onRowClick}
@@ -16,12 +22,14 @@ const QuickAccessRow = ({ title, image, onRowClick }) => (
 );
 
 QuickAccessRow.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
   image: PropTypes.string,
   onRowClick: PropTypes.func,
 };
 
 QuickAccessRow.defaultProps = {
+  id: null,
   title: '',
   image: null,
   onRowClick: () => null,
