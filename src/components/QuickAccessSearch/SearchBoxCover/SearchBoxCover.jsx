@@ -9,7 +9,8 @@ import NoResultsImage from 'assets/images/leaf.svg';
 import getSubscriptions from 'queries/subscriptions/getByFilter';
 import './SearchBoxCover.scss';
 import QuickAccessRow from 'components/QuickAccessSearch/QuickAccessRow/QuickAccessRow';
-import QuickAccessAddSubscription from '../QuickAccessAddSubscription/QuickAccessAddSubscription';
+import QuickAccessAddSubscription from 'components/QuickAccessSearch/QuickAccessAddSubscription/QuickAccessAddSubscription';
+import SimpleTextButton from 'components/SimpleTextButton/SimpleTextButton';
 
 
 class SearchBoxCover extends Component {
@@ -76,6 +77,17 @@ class SearchBoxCover extends Component {
         id: rowId,
         title: rowName,
         image: rowImage,
+      },
+    });
+  }
+
+  onAddCustomTrackingItemClick = () => {
+    this.setState({
+      showQuickAccessRowAddForm: true,
+      selectedRowContent: {
+        id: null,
+        title: null,
+        image: null,
       },
     });
   }
@@ -156,6 +168,21 @@ class SearchBoxCover extends Component {
     return null;
   }
 
+  getCustomTrackingItemAddButton = () => {
+    const { showCover } = this.state;
+
+    if (showCover) {
+      return (
+        <SimpleTextButton
+          text="Add Custom?"
+          onClickCallback={this.onAddCustomTrackingItemClick}
+        />
+      );
+    }
+
+    return null;
+  }
+
   render = () => {
     const { showCover, showQuickAccessRowAddForm } = this.state;
     const searchBoxCoverClassNames = classNames({
@@ -172,6 +199,7 @@ class SearchBoxCover extends Component {
           onFocusChangeCallback={this.onSearchBoxFocusChange}
           onCancelClickCallback={this.onCancelClick}
         />
+        {this.getCustomTrackingItemAddButton()}
         <div className="searchbox-cover-results-container">
           {this.getSearchResults()}
         </div>

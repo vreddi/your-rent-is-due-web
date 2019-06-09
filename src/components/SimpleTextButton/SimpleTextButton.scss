@@ -1,0 +1,47 @@
+.simpletextbutton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  .simpletextbutton-btn {
+    display: flex;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-top: 1.5em;
+    padding: 0.8em 0em;
+    color: #a1a1a2;
+
+    &:hover {
+      color: #74abfa;
+
+      .simpletextbutton-icon {
+        animation-duration: 0.5s;
+        transform: translate(-0.1em, 0);
+      }
+      .simpletextbutton-text {
+        animation-delay: 1.2s;
+        animation: fadeIn 1s;
+      }
+    }
+  
+    .simpletextbutton-icon {
+      font-size: 2em;
+      transition: 1s;
+    }
+  
+    .simpletextbutton-text {
+      align-self: center;
+      margin-left: 0.6em;
+      font-weight: 600;
+      transition: 1s;
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
