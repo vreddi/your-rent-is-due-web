@@ -73,6 +73,7 @@ class QuickAccessAddSubscription extends Component {
       amount,
       autoPay,
       billFrequencyValue,
+      selectedDate,
     } = this.state;
     const trackingItem = {
       title,
@@ -80,6 +81,7 @@ class QuickAccessAddSubscription extends Component {
       autoPaySet: autoPay,
       type: TrackingItemUtils.trackingItemType.SUBSCRIPTION,
       frequency: billFrequencyValue,
+      recurringDate: selectedDate,
       subscriptionTemplateId: id,
     };
 
