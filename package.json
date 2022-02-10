@@ -84,7 +84,7 @@
     "image-webpack-loader": "^4.6.0",
     "jest": "^24.7.1",
     "jest-enzyme": "^7.0.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
